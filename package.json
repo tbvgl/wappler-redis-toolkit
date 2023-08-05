@@ -1,0 +1,35 @@
+{
+    "name": "wappler-redis-toolkit",
+    "version": "0.0.0-semantic-release",
+    "description": "Wappler Redis Toolkit",
+    "main": "index.js",
+    "scripts": {
+        "postinstall": "node scripts/copyFiles.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tbvgl/wappler-redis-toolkit.git"
+    },
+    "keywords": [
+        "wappler-extension",
+        "server-connect",
+        "bull-queues"
+    ],
+    "author": "Tobias Vogel",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tbvgl/wappler-redis-toolkit/issues"
+    },
+    "homepage": "https://github.com/tbvgl/wappler-redis-toolkit#readme",
+    "devDependencies": {
+        "@commitlint/cli": "^17.6.7",
+        "@commitlint/config-conventional": "^17.6.7",
+        "@semantic-release/changelog": "github:semantic-release/changelog",
+        "@semantic-release/git": "github:semantic-release/git",
+        "husky": "^8.0.3",
+        "semantic-release": "^21.0.2"
+    },
+    "dependencies": {
+        "ioredis": "^5.3.1"
+    }
+}
