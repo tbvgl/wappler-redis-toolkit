@@ -1,0 +1,1043 @@
+[
+  {
+    "type": "insertJsonToRedis",
+    "module": "RedisToolkit",
+    "action": "insertJsonToRedis",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Insert JSON to Redis",
+    "icon": "fas fa-lg fa-upload comp-data",
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "redisKey",
+            "optionName": "key",
+            "title": "Redis Key",
+            "type": "text",
+            "required": true,
+            "serverDataBindings": true
+          },
+          {
+            "name": "filePath",
+            "optionName": "filePath",
+            "title": "JSON File",
+            "type": "text",
+            "required": false,
+            "serverDataBindings": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "jsonValue",
+            "optionName": "jsonValue",
+            "title": "JSON Value",
+            "type": "text",
+            "required": false,
+            "serverDataBindings": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "encoding",
+            "optionName": "encoding",
+            "title": "File Encoding",
+            "type": "text",
+            "required": false,
+            "serverDataBindings": true,
+            "defaultValue": "utf8"
+          },
+          {
+            "name": "ttl",
+            "optionName": "ttl",
+            "title": "TTL (seconds)",
+            "type": "numberorstring",
+            "required": false,
+            "serverDataBindings": true,
+            "defaultValue": null
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "required": false,
+            "serverDataBindings": true,
+            "defaultValue": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "getJsonFromRedis",
+    "module": "RedisToolkit",
+    "action": "getJsonFromRedis",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Get JSON from Redis @@var(redisKey)@@",
+    "icon": "fas fa-lg fa-download comp-data",
+    "dataPickObject": true,
+    "dataScheme": [
+      {
+        "name": "content",
+        "type": "object"
+      }
+    ],
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "name",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "redisKey",
+            "optionName": "key",
+            "title": "Redis Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "deleteFromRedis",
+    "module": "RedisToolkit",
+    "action": "deleteFromRedis",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Delete value from Redis @@var(redisKey)@@",
+    "icon": "fas fa-lg fa-trash comp-data",
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "redisKey",
+            "optionName": "key",
+            "title": "Redis Key",
+            "serverDataBindings": true,
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "serverDataBindings": true,
+            "type": "numberorstring",
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "updateJsonInRedis",
+    "module": "RedisToolkit",
+    "action": "updateJsonInRedis",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Update JSON in Redis @@var(redisKey)@@",
+    "icon": "fas fa-lg fa-sync comp-data",
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "redisKey",
+            "optionName": "key",
+            "title": "Redis Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "json",
+            "optionName": "json",
+            "title": "JSON Value",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "incrementCounter",
+    "module": "RedisToolkit",
+    "action": "incrementCounter",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Increment Counter in Redis @@var(redisKey)@@",
+    "icon": "fas fa-lg fa-plus comp-data",
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "redisKey",
+            "optionName": "key",
+            "title": "Redis Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "increment",
+            "optionName": "increment",
+            "title": "Increment Value",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": 1
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "decrementCounter",
+    "module": "RedisToolkit",
+    "action": "decrementCounter",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Decrement Counter in Redis @@var(redisKey)@@",
+    "icon": "fas fa-lg fa-minus comp-data",
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "redisKey",
+            "optionName": "key",
+            "title": "Redis Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "decrement",
+            "optionName": "decrement",
+            "title": "Decrement Value",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": 1
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "getAllKeys",
+    "module": "RedisToolkit",
+    "action": "getAllKeys",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Get All Keys in Redis",
+    "icon": "fas fa-lg fa-list comp-data",
+    "dataScheme": [
+      {
+        "name": "keys",
+        "type": "array",
+        "sub": [
+          {
+            "name": "key",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "name",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "runRedisCommand",
+    "module": "RedisToolkit",
+    "action": "runRedisCommand",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Run Redis Command",
+    "icon": "fas fa-lg fa-terminal comp-data",
+    "dataScheme": [
+      {
+        "name": "reply",
+        "type": "text"
+      }
+    ],
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "name",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "command",
+            "optionName": "command",
+            "title": "Redis Command",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "args",
+            "optionName": "args",
+            "title": "Arguments",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "getAllKeyValuePairs",
+    "module": "RedisToolkit",
+    "action": "getAllKeyValuePairs",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Get All Key-Value Pairs",
+    "icon": "fas fa-lg fa-list comp-data",
+    "dataScheme": [
+      {
+        "name": "key_value_pairs",
+        "type": "object"
+      }
+    ],
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "name",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": "0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "expireKey",
+    "module": "RedisToolkit",
+    "action": "expireKey",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Expire Key in Redis",
+    "icon": "fas fa-lg fa-clock comp-data",
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "name",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "Redis Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "expiration",
+            "optionName": "expiration",
+            "title": "Expiration Time (seconds)",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": true
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "renameKey",
+    "module": "RedisToolkit",
+    "action": "renameKey",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Rename Key in Redis",
+    "icon": "fas fa-lg fa-pencil-alt comp-data",
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "name",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "oldKey",
+            "optionName": "oldKey",
+            "title": "Old Key Name",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "newKey",
+            "optionName": "newKey",
+            "title": "New Key Name",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": "0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "keyExists",
+    "module": "RedisToolkit",
+    "action": "keyExists",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Check if Key Exists in Redis",
+    "icon": "fas fa-lg fa-search comp-data",
+    "dataPickObject": true,
+    "dataScheme": [
+      {
+        "name": "keyExists",
+        "type": "boolean"
+      }
+    ],
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "name",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "Redis Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": "0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "getExpirationTTL",
+    "module": "RedisToolkit",
+    "action": "getExpirationTTL",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Get Expiration TTL",
+    "icon": "fas fa-lg fa-clock comp-data",
+    "dataScheme": [
+      {
+        "name": "ttl",
+        "type": "number"
+      }
+    ],
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "name",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "Redis Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": "0"
+          },
+          {
+            "name": "pttl",
+            "optionName": "pttl",
+            "title": "Use PTTL",
+            "type": "boolean",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "addElementsToSet",
+    "module": "RedisToolkit",
+    "action": "addElementsToSet",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Add Elements to Set",
+    "icon": "fas fa-lg fa-plus-square comp-data",
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "Set Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "elements",
+            "optionName": "elements",
+            "title": "Elements",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": []
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "addElementsToList",
+    "module": "RedisToolkit",
+    "action": "addElementsToList",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Add Elements to List",
+    "icon": "fas fa-lg fa-plus-square comp-data",
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "List Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "elements",
+            "optionName": "elements",
+            "title": "Elements",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": []
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "removeFromSet",
+    "module": "RedisToolkit",
+    "action": "removeFromSet",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Remove Item from Set",
+    "icon": "fas fa-lg fa-minus-circle comp-data",
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "Set Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "item",
+            "optionName": "item",
+            "title": "Item to Remove",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "removeFromList",
+    "module": "RedisToolkit",
+    "action": "removeFromList",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Remove Item from List",
+    "icon": "fas fa-lg fa-minus-circle comp-data",
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "List Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "item",
+            "optionName": "item",
+            "title": "Item to Remove",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "removeDuplicatesFromList",
+    "module": "RedisToolkit",
+    "action": "removeDuplicatesFromList",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Remove Duplicates from List",
+    "icon": "fas fa-lg fa-clone comp-data",
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "List Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "getListRange",
+    "module": "RedisToolkit",
+    "action": "getListRange",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Get List Range",
+    "icon": "fas fa-lg fa-list comp-data",
+    "dataScheme": [
+      {
+        "name": "range",
+        "type": "array",
+        "sub": [
+          {
+            "name": "element",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "List Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "start",
+            "optionName": "start",
+            "title": "Start Index",
+            "type": "number",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": 0
+          },
+          {
+            "name": "end",
+            "optionName": "end",
+            "title": "End Index",
+            "type": "number",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": -1
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "number",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          },
+          {
+            "name": "name",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "getCollectionLength",
+    "module": "RedisToolkit",
+    "action": "getCollectionLength",
+    "groupTitle": "Redis Actions",
+    "groupIcon": "fas fa-lg fa-database comp-data",
+    "title": "Get Collection Length",
+    "icon": "fas fa-lg fa-sort-numeric-up comp-data",
+    "dataScheme": [
+      {
+        "name": "collection_length",
+        "type": "number"
+      }
+    ],
+    "properties": [
+      {
+        "group": "Properties",
+        "variables": [
+          {
+            "name": "name",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          },
+          {
+            "name": "key",
+            "optionName": "key",
+            "title": "Collection Key",
+            "type": "text",
+            "serverDataBindings": true,
+            "required": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "valuetype",
+            "optionName": "valuetype",
+            "title": "Value Type",
+            "type": "droplist",
+            "values": [
+              {
+                "title": "List",
+                "value": "list"
+              },
+              {
+                "title": "Set",
+                "value": "set"
+              },
+              {
+                "title": "Sorted Set",
+                "value": "sortedset"
+              }
+            ],
+            "defaultValue": ""
+          },
+          {
+            "name": "db",
+            "optionName": "db",
+            "title": "Redis DB",
+            "type": "numberorstring",
+            "serverDataBindings": true,
+            "required": false,
+            "defaultValue": ""
+          }
+        ]
+      }
+    ]
+  }
+]
